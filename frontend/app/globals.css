@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f7f9;
+  --foreground: #111827;
+  --surface: #ffffff;
+  --ink: #111827;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-soft: #eff6ff;
+  --brand: #111827;
+  --brand-mid: #1f2937;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-canvas: #f6f7f9;
+  --color-ink: #111827;
+  --color-muted: #6b7280;
+  --color-line: #e5e7eb;
+  --color-surface: #ffffff;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-accent-soft: #eff6ff;
+  --color-brand: #111827;
+  --color-brand-mid: #1f2937;
+  --font-sans: var(--font-outfit);
+  --font-display: var(--font-outfit);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-outfit), system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.font-display {
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.bg-atmosphere {
+  background-color: #f6f7f9;
+  background-image:
+    radial-gradient(ellipse 90% 55% at 50% -20%, rgba(37, 99, 235, 0.12), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #f6f7f9 100%);
+}
+
+.bg-brand-panel {
+  background-color: #0b1220;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 85% 15%, rgba(37, 99, 235, 0.35), transparent 55%),
+    linear-gradient(165deg, #0b1220 0%, #111827 55%, #1e3a8a 160%);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.animate-rise {
+  animation: rise-in 0.55s ease-out both;
+}
+
+.animate-rise-delay-1 {
+  animation: rise-in 0.55s ease-out 0.1s both;
+}
+
+.animate-rise-delay-2 {
+  animation: rise-in 0.55s ease-out 0.2s both;
+}
+
+.animate-fade {
+  animation: fade-in 0.7s ease-out both;
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 4s ease-in-out infinite;
+}
